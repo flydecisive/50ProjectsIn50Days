@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.container__item {
+    width: 8vw;
+    height: 80vh;
+}
+
+.container__item-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+}
+
+.active {
+    width: 55vw;
+}
