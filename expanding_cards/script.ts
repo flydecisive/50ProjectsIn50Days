@@ -21,7 +21,7 @@ function changeActive(item: Element): void {
 function changeHidden(item: Element): void {
     const titles = document.querySelectorAll('.title');
     titles.forEach((title) => {
-                title.classList.add('hidden');
+        title.classList.add('hidden');
     });
     const title = item.querySelector('.title');
     title?.classList.remove('hidden');
