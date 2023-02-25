@@ -15,14 +15,27 @@
 .container__item {
     width: 8vw;
     height: 80vh;
+    position: relative;
 }
 
 .container__item-img {
     width: 100%;
     height: 100%;
-    border-radius: 50px;
+    border-radius: 60px;
 }
 
 .active {
     width: 55vw;
+}
+
+.title {
+    position: absolute;
+    color: #fff;
+    bottom: 25px;
+    left: 25px;
+    font-size: 32px;
+}
+
+.hidden {
+    display: none;
 }
