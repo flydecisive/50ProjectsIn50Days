@@ -14,6 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (button.classList.contains('next__button')) {
                 if (currentPosition < 3) {
                     currentPosition += 1;
+                    let element = elements?.item(currentPosition) as HTMLElement;
+                    if (element !== undefined) {
+                        element.style.borderColor = 'blue';
+                    }
+                    
                 }
                 if (currentPosition > 0) {
                     previousButton?.classList.remove('disabled');
@@ -26,6 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (button.classList.contains('previous__button')) {
                 if (currentPosition !== 0) {
                     currentPosition -= 1;
+                    let element = elements?.item(currentPosition + 1) as HTMLElement;
+                    if (element !== undefined) {
+                        element.style.borderColor = 'lightgrey';
+                    }
                 } 
                 if (currentPosition < 1) {
                     previousButton?.classList.add('disabled');
