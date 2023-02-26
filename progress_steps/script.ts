@@ -6,7 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const previousButton = buttonsContainer?.querySelector('.previous__button');
     const nextButton = buttonsContainer?.querySelector('.next__button');
     const buttons = buttonsContainer?.querySelectorAll('.button');
+    const progress = elementsContainer?.querySelector('.progress') as HTMLElement;
     let currentPosition = 0;
+    let progressPosition = 0;
     previousButton?.classList.add('disabled');
     previousButton?.setAttribute('disabled', 'true');
     buttons?.forEach((button) => {
@@ -17,8 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     let element = elements?.item(currentPosition) as HTMLElement;
                     if (element !== undefined) {
                         element.style.borderColor = 'blue';
+                        progressPosition += 33;
+                        progress.style.width = `${progressPosition}%`;
                     }
-                    
                 }
                 if (currentPosition > 0) {
                     previousButton?.classList.remove('disabled');
@@ -34,6 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     let element = elements?.item(currentPosition + 1) as HTMLElement;
                     if (element !== undefined) {
                         element.style.borderColor = 'lightgrey';
+                        progressPosition -= 33;
+                        progress.style.width = `${progressPosition}%`;
                     }
                 } 
                 if (currentPosition < 1) {

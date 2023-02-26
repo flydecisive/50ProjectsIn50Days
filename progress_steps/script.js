@@ -6,7 +6,9 @@ document.addEventListener('DOMContentLoaded', function () {
     var previousButton = buttonsContainer === null || buttonsContainer === void 0 ? void 0 : buttonsContainer.querySelector('.previous__button');
     var nextButton = buttonsContainer === null || buttonsContainer === void 0 ? void 0 : buttonsContainer.querySelector('.next__button');
     var buttons = buttonsContainer === null || buttonsContainer === void 0 ? void 0 : buttonsContainer.querySelectorAll('.button');
+    var progress = elementsContainer === null || elementsContainer === void 0 ? void 0 : elementsContainer.querySelector('.progress');
     var currentPosition = 0;
+    var progressPosition = 0;
     previousButton === null || previousButton === void 0 ? void 0 : previousButton.classList.add('disabled');
     previousButton === null || previousButton === void 0 ? void 0 : previousButton.setAttribute('disabled', 'true');
     buttons === null || buttons === void 0 ? void 0 : buttons.forEach(function (button) {
@@ -17,6 +19,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     var element = elements === null || elements === void 0 ? void 0 : elements.item(currentPosition);
                     if (element !== undefined) {
                         element.style.borderColor = 'blue';
+                        progressPosition += 33;
+                        progress.style.width = "".concat(progressPosition, "%");
                     }
                 }
                 if (currentPosition > 0) {
@@ -34,6 +38,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     var element = elements === null || elements === void 0 ? void 0 : elements.item(currentPosition + 1);
                     if (element !== undefined) {
                         element.style.borderColor = 'lightgrey';
+                        progressPosition -= 33;
+                        progress.style.width = "".concat(progressPosition, "%");
                     }
                 }
                 if (currentPosition < 1) {
